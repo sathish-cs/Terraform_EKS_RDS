@@ -13,7 +13,6 @@ module "vpc" {
 module "rds" {
   source                  = "../modules/rds/"
   port                    = var.port
-  name                    = var.name
   cluster_name            = var.cluster_name
   instance_class          = var.instance_class
   db                      = var.db
@@ -29,7 +28,7 @@ module "rds" {
   public_subnet           = module.vpc.public_subnet[0]
   rds_subnet              = module.vpc.private_subnet
   vpc                     = module.vpc.vpc
-  tags = var.tags
+  tags                    = var.tags
 }
 
 module "eks" {
