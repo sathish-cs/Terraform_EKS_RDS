@@ -25,3 +25,17 @@ cd pigeonlab_devops/staging
 terraform init
 terraform apply
 ```
+
+## Run below command after provisioning resources
+
+```aws eks --region ap-southeast-1 update-kubeconfig --name $cluster-name```
+
+```kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml```
+
+```kubectl apply -f tutum-app.yaml````
+
+Application is accessbile from bastion server. SSH into bastion server.
+
+Update worker node security group to allow bastion host.
+
+```curl worker-node-primary-private-ip:30001``` 
