@@ -32,7 +32,7 @@ spec:
     spec:
       automountServiceAccountToken: false  # Disable mounting service account token to pod unless its needed.
       containers:
-      - image: tutum/hello-world
+      - image: tutum/hello-world:latest
         name: hello-world
         resources:
           limits:
