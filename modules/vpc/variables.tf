@@ -15,7 +15,7 @@ variable "private_cidr" {
 
 variable "avail_zone" {
   type    = list(any)
-  default = ["eu-central-1a", "eu-central-1b", "eu-central-1c"]
+  default = ["ap-southeast-1a", "ap-southeast-1b", "ap-southeast-1c"]
 }
 
 variable "public_subnet_names" {
