@@ -26,11 +26,6 @@ variable "port" {
 
 }
 
-variable "name" {
-  type    = string
-  default = "db-subnet"
-}
-
 variable "cluster_name" {}
 
 variable "instance_class" {

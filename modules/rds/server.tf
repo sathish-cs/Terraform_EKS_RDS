@@ -10,13 +10,13 @@ resource "aws_instance" "Public" {
   }
 }
 resource "aws_key_pair" "key" {
-  key_name   = "ssh-key"
+  key_name   = "${var.tags}-ssh-key"
   public_key = tls_private_key.ssh-key.public_key_openssh
 }
 
 
 resource "local_file" "pem_file" {
-  filename             = pathexpand("./mykey.pem")
+  filename             = "${path.module}/${var.tags}-mykey.pem" # pathexpand("./mykey.pem")
   file_permission      = "600"
   directory_permission = "700"
   sensitive_content    = tls_private_key.ssh-key.private_key_pem
@@ -51,7 +51,7 @@ resource "aws_security_group" "bastion-sg" {
 
 #DB Subnet Group for RDS
 resource "aws_db_subnet_group" "main" {
-  name        = var.name
+  name        = "${var.tags}-db-subnet"
   description = "For Aurora cluster var.name}"
   subnet_ids  = var.rds_subnet
   tags = {
@@ -80,13 +80,6 @@ resource "aws_rds_cluster" "cluster" {
   preferred_backup_window = var.backup_window
   deletion_protection     = var.deletion_protection
   backup_retention_period = var.backup_retention_period
-}
-
-
-locals {
-  aurora_db_password = {
-    root = "password"
-  }
 }
 
 #RDS security group
