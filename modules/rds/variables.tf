@@ -1,6 +1,6 @@
 variable "ami_id" {
   type    = string
-  default = "ami-0bad4a5e987bdebde" # Amazon Linux  
+  default = "ami-0e8e39877665a7c92" # Amazon Linux  
 }
 
 variable "int_type" {
