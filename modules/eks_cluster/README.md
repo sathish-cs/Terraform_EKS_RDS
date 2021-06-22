@@ -1,6 +1,5 @@
 
-  # EKS Cluster 
-
+# EKS Cluster 
 
 
 
@@ -10,7 +9,7 @@ It will be output the cluster endpoint and cluster name.
 
 
 ```
- aws eks --region ap-southeast-1 update-kubeconfig --name $cluster-name --profile hashi
+ aws eks --region ap-southeast-1 update-kubeconfig --name $cluster-name
 
 ```
 
