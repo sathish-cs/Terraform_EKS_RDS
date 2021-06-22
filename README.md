@@ -34,8 +34,8 @@ terraform apply
 
 ```kubectl apply -f tutum-app.yaml````
 
-Application is accessbile from bastion server. SSH into bastion server.
+Application is accessbile from bastion server. 
 
-Update worker node security group to allow bastion host.
+Update worker node security group to allow bastion host and it will be accessible from bastion host. (To access the application from outside need to setup ingress controllers)
 
 ```curl worker-node-primary-private-ip:30001``` 
