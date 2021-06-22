@@ -98,6 +98,6 @@ variable "security_group_bastion" {
 }
 
 variable "security_group_aurora" {
-  description = "The name of bastion server Security Group"
+  description = "The name of aurora server Security Group"
   default     = "rds-aurora-sg"
 }
