@@ -32,7 +32,7 @@ terraform apply
 
 ```kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml```
 
-```kubectl apply -f tutum-app.yaml````
+```kubectl apply -f tutum-app.yaml```
 
 Application is accessbile from bastion server. 
 
