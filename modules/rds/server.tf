@@ -45,7 +45,7 @@ resource "aws_security_group" "bastion-sg" {
   }
 
   tags = {
-    Name = var.security_group_bastion
+    Name = "${var.tags}-bastion"
   }
 }
 
@@ -102,8 +102,7 @@ resource "aws_security_group" "aurora-sg" {
   }
 
   tags = {
-    Name = "var.security_group_aurora"
-    Env  = var.tags
+    Name = "${var.tags}-rds-aurora-sg"
   }
 }
 
