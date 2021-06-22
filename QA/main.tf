@@ -29,7 +29,6 @@ module "rds" {
   public_subnet           = module.vpc.public_subnet[0]
   rds_subnet              = module.vpc.private_subnet
   vpc                     = module.vpc.vpc
-  key                     = var.key
   tags                    = var.tags
 }
 
