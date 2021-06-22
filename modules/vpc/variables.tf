@@ -28,17 +28,6 @@ variable "private_subnet_names" {
   default = ["Private-Subnet-1", "Private-Subnet-2"]
 }
 
-variable "ami_id" {
-  type    = string
-  default = "ami-0e0102e3ff768559b"
-}
-
-variable "int_type" {
-  type    = string
-  default = "t2.small"
-
-}
-
 variable "tags" {}
 
 variable "vpc_id" {}
