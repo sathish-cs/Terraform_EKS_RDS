@@ -18,12 +18,6 @@ output "db_user" {
   value = module.rds.rds_username
 }
 
-/* output "db_password" {
-  description = "The password to login RDS Aurora database"
-  value = module.rds.local.aurora_db_password
-  sensitive = true
-} */
-
 output "eks_cluster_name" {
   value = module.eks.eks_cluster_name
 }
