@@ -30,7 +30,7 @@ variable "private_subnet_names" {
 
 variable "tags" {
   type    = string
-  default = "Staging"
+  default = "staging"
 }
 
 variable "int_type" {

@@ -13,7 +13,6 @@ module "vpc" {
 module "rds" {
   source                  = "../modules/rds/"
   port                    = var.port
-  name                    = var.name
   cluster_name            = var.cluster_name
   instance_class          = var.instance_class
   db                      = var.db
