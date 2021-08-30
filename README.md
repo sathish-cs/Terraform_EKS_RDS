@@ -1,11 +1,12 @@
-                   
 
-# Infra Provsioning in AWS Cloud
+## Provsioning infra in AWS Cloud using Terraform
 
+This repo contains 3 different environments and it creates bastion host to access EKS worker nodes. 
 
-
-
-This directory contains 3 different environments and using the same modules to provision resources.
+ * VPC 
+ * Ec2 instance
+ * RDS 
+ * EKS Cluster
 
 ## Prerequisite
 
@@ -17,25 +18,10 @@ This directory contains 3 different environments and using the same modules to p
 
 To provision resources clone the repository and run `terraform apply` in any of the environment.
 
-For example:
 
-```
-git@github.com:sathish-cs/pigeonlab_devops.git
-cd pigeonlab_devops/staging
-terraform init
-terraform apply
 ```
 
 ## Run below command after provisioning resources
 
 ```aws eks --region ap-southeast-1 update-kubeconfig --name $cluster-name```
 
-```kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml```
-
-```kubectl apply -f tutum-app.yaml```
-
-Application is accessbile from bastion server. 
-
-Update worker node security group to allow bastion host and it will be accessible from bastion host. (To access the application from outside need to setup ingress controllers)
-
-```curl worker-node-primary-private-ip:30001``` 
